@@ -1,0 +1,3 @@
+﻿Profiling of 'Genome Similarity' started.
+Genome Similarity has exited.
+Profiling of 'Genome Similarity' stopped.
