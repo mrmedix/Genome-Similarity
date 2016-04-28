@@ -17,6 +17,38 @@
         </PerformanceAdvisorCheckpoint>
       </d2p1:Value>
     </d2p1:KeyValueOfstringArrayOfPerformanceAdvisorCheckpointY1yixN8r>
+    <d2p1:KeyValueOfstringArrayOfPerformanceAdvisorCheckpointY1yixN8r>
+      <d2p1:Key>Using Intel® C++ Compiler</d2p1:Key>
+      <d2p1:Value>
+        <PerformanceAdvisorCheckpoint>
+          <Description>Using Intel® C++ Compiler</Description>
+          <ElapsedTime>PT21.3125S</ElapsedTime>
+          <PrivilegedProcessorTime>PT30.046875S</PrivilegedProcessorTime>
+          <TotalProcessorTime>PT30.5081252S</TotalProcessorTime>
+          <UserProcessorTime>PT8.734375S</UserProcessorTime>
+          <WhenTaken>2016-04-20T13:03:54.3940859+10:00</WhenTaken>
+          <processorsLoad>
+            <d2p1:float>0</d2p1:float>
+          </processorsLoad>
+        </PerformanceAdvisorCheckpoint>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringArrayOfPerformanceAdvisorCheckpointY1yixN8r>
+    <d2p1:KeyValueOfstringArrayOfPerformanceAdvisorCheckpointY1yixN8r>
+      <d2p1:Key>Using Intel® C++ Compiler with new options</d2p1:Key>
+      <d2p1:Value>
+        <PerformanceAdvisorCheckpoint>
+          <Description>Using Intel® C++ Compiler with new options</Description>
+          <ElapsedTime>PT20.9375S</ElapsedTime>
+          <PrivilegedProcessorTime>PT29.8125S</PrivilegedProcessorTime>
+          <TotalProcessorTime>PT30.726804S</TotalProcessorTime>
+          <UserProcessorTime>PT8.875S</UserProcessorTime>
+          <WhenTaken>2016-04-20T13:06:07.0646517+10:00</WhenTaken>
+          <processorsLoad>
+            <d2p1:float>0</d2p1:float>
+          </processorsLoad>
+        </PerformanceAdvisorCheckpoint>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringArrayOfPerformanceAdvisorCheckpointY1yixN8r>
   </Checkpoints>
   <CompletionStatusMap xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
     <d2p1:KeyValueOfstringStateY1yixN8r>
@@ -72,9 +104,9 @@
     <d2p1:KeyValueOfstringStateY1yixN8r>
       <d2p1:Key>ProfileApp</d2p1:Key>
       <d2p1:Value>
-        <IsCurrent>true</IsCurrent>
-        <IsDone>false</IsDone>
-        <NextAlwaysEnabled>false</NextAlwaysEnabled>
+        <IsCurrent>false</IsCurrent>
+        <IsDone>true</IsDone>
+        <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
       </d2p1:Value>
@@ -83,7 +115,7 @@
       <d2p1:Key>ReviewHotspots</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
+        <IsDone>true</IsDone>
         <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
@@ -93,7 +125,7 @@
       <d2p1:Key>UseIntelCompiler</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
+        <IsDone>true</IsDone>
         <NextAlwaysEnabled>false</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
@@ -103,8 +135,8 @@
       <d2p1:Key>SelectFilesForIntelC</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
-        <NextAlwaysEnabled>false</NextAlwaysEnabled>
+        <IsDone>true</IsDone>
+        <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
       </d2p1:Value>
@@ -113,8 +145,8 @@
       <d2p1:Key>GetPerformanceProgressWithIntelC</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
-        <NextAlwaysEnabled>false</NextAlwaysEnabled>
+        <IsDone>true</IsDone>
+        <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
       </d2p1:Value>
@@ -123,7 +155,7 @@
       <d2p1:Key>CheckPerfProgressIntelC</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
+        <IsDone>true</IsDone>
         <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
@@ -133,8 +165,8 @@
       <d2p1:Key>DetermineIntelCompilerOptions</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
-        <NextAlwaysEnabled>false</NextAlwaysEnabled>
+        <IsDone>true</IsDone>
+        <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
       </d2p1:Value>
@@ -143,8 +175,8 @@
       <d2p1:Key>GetPerformanceProgressWithNewOptions</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
-        <NextAlwaysEnabled>false</NextAlwaysEnabled>
+        <IsDone>true</IsDone>
+        <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
       </d2p1:Value>
@@ -153,7 +185,7 @@
       <d2p1:Key>CheckPerfProgressNewOptions</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
+        <IsDone>true</IsDone>
         <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
@@ -163,8 +195,8 @@
       <d2p1:Key>UseGAP</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
-        <NextAlwaysEnabled>false</NextAlwaysEnabled>
+        <IsDone>true</IsDone>
+        <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
       </d2p1:Value>
@@ -173,7 +205,7 @@
       <d2p1:Key>ReviewGAPAdvice</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
+        <IsDone>true</IsDone>
         <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
@@ -183,7 +215,7 @@
       <d2p1:Key>GetPerformanceProgressWithGAP</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
+        <IsDone>true</IsDone>
         <NextAlwaysEnabled>false</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
@@ -193,7 +225,7 @@
       <d2p1:Key>CheckPerfProgressGAP</d2p1:Key>
       <d2p1:Value>
         <IsCurrent>false</IsCurrent>
-        <IsDone>false</IsDone>
+        <IsDone>true</IsDone>
         <NextAlwaysEnabled>true</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
         <ShowDoneStatus>false</ShowDoneStatus>
@@ -202,7 +234,7 @@
     <d2p1:KeyValueOfstringStateY1yixN8r>
       <d2p1:Key>UsePGO</d2p1:Key>
       <d2p1:Value>
-        <IsCurrent>false</IsCurrent>
+        <IsCurrent>true</IsCurrent>
         <IsDone>false</IsDone>
         <NextAlwaysEnabled>false</NextAlwaysEnabled>
         <NextAlwaysFocused>false</NextAlwaysFocused>
@@ -261,11 +293,252 @@
     </d2p1:KeyValueOfstringStateY1yixN8r>
   </CompletionStatusMap>
   <GapAdvices xmlns:d2p1="http://schemas.datacontract.org/2004/07/Intel.PerformanceGuide" />
-  <GapAnalysisHasBeenRun>false</GapAnalysisHasBeenRun>
-  <Hotspots />
+  <GapAnalysisHasBeenRun>true</GapAnalysisHasBeenRun>
+  <Hotspots>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>146</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>14.456484</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>159</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>7.369079</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>122</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>7.329488</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>143</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>5.065402</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>194</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>3.885813</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>200</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>3.477532</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>208</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>3.307840</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>127</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>3.277444</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>130</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>3.080120</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>135</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>2.748232</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>207</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>2.573572</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>138</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>2.572735</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>202</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>2.539124</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>204</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>2.369499</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>196</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>2.315383</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+    <PerformanceAdvisorHotSpot>
+      <CountsSelf>-1</CountsSelf>
+      <CountsTotal>-1</CountsTotal>
+      <FileName i:nil="true" />
+      <IsSelected>false</IsSelected>
+      <LineNumber>142</LineNumber>
+      <NestingLevel>-1</NestingLevel>
+      <PercentCpuTime>2.173125</PercentCpuTime>
+      <ProjectName i:nil="true" />
+      <RoutineBeginLine>-1</RoutineBeginLine>
+      <RoutineEndLine>-1</RoutineEndLine>
+      <RoutineName>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\improved.cpp</RoutineName>
+      <TotalTimeSelf>-1</TotalTimeSelf>
+      <TotalTimeTotal>-1</TotalTimeTotal>
+    </PerformanceAdvisorHotSpot>
+  </Hotspots>
   <OptionSelectorDialogState xmlns:d2p1="http://schemas.datacontract.org/2004/07/Intel.PerformanceGuide" />
-  <OptionSelectorHasBeenRun>false</OptionSelectorHasBeenRun>
-  <UIState>1</UIState>
+  <OptionSelectorHasBeenRun>true</OptionSelectorHasBeenRun>
+  <UIState>3</UIState>
   <WorkflowSettings xmlns:d2p1="http://schemas.datacontract.org/2004/07/Intel.PerformanceGuide">
     <d2p1:CopyFromConfigurationName>Release</d2p1:CopyFromConfigurationName>
     <d2p1:CreateNewConfiguration>false</d2p1:CreateNewConfiguration>
