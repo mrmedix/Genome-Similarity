@@ -213,7 +213,10 @@
       <FloatingPointExceptions>false</FloatingPointExceptions>
       <OptimizeForWindowsApplication>true</OptimizeForWindowsApplication>
       <UseProcessorExtensions>HOST</UseProcessorExtensions>
-      <Parallelization>True</Parallelization>
+      <Parallelization>false</Parallelization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <UseIntelOptimizedHeaders>true</UseIntelOptimizedHeaders>
+      <OpenMP>GenerateParallelCode</OpenMP>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
