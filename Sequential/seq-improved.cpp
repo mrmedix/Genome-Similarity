@@ -1,7 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
 #include <math.h>
+#include <cstdlib>
 
 int number_bacteria;
 char** bacteria_name;
@@ -91,7 +93,7 @@ public:
 				fread(buffer, sizeof(char), LEN-1, bacteria_file);
 				init_buffer(buffer);
 			}
-			else if (ch != '\n' && ch != '\r') // Bjorn's edit, some files have \r\n line ending which crashes the program.
+			else if (ch != '\n' && ch != '\r')
 				cont_buffer(ch);
 		}
 
@@ -235,45 +237,19 @@ double CompareBacteria(Bacteria* b1, Bacteria* b2)
 void CompareAllBacteria()
 {
 	Bacteria** b = new Bacteria*[number_bacteria];
-#pragma omp parallel for num_threads(8)
-	for(int i=0; i<number_bacteria; i++)
+    for(int i=0; i<number_bacteria; i++)
 	{
 		printf("load %d of %d\n", i+1, number_bacteria);
 		b[i] = new Bacteria(bacteria_name[i]);
 	}
 
-	/*
-	Results are printed to the screen in random order due to thread scheduler.
-	Need to store results in a temporary data structure to present consistently ordered results
-	to the user.
-	*/
-
-	double **results;
-	results = new double*[number_bacteria - 1]; // i loop does num - 1 iterations
-	for (int i = 0; i < number_bacteria - 1; i++)
-	{
-		results[i] = new double[number_bacteria - 1];				
-	}
-
-	
-#pragma omp parallel for num_threads(8)
-	for (int i = 0; i < number_bacteria - 1; i++)
-	{
-		for (int j = i + 1; j < number_bacteria; j++) // work for each thread reduces as distance to number_bacteria decreases.
+    for(int i=0; i<number_bacteria-1; i++)
+		for(int j=i+1; j<number_bacteria; j++)
 		{
-			results[i][j] = CompareBacteria(b[i], b[j]);
-			//printf("%2d %2d -> %.20lf\n", i, j, correlation);
+			printf("%2d %2d -> ", i, j);
+			double correlation = CompareBacteria(b[i], b[j]);
+			printf("%.20lf\n", correlation);
 		}
-	}
-	
-	// Replicate comparison loop, printing out to screen
-	for (int i = 0; i < number_bacteria - 1; i++)
-	{
-		for (int j = i + 1; j < number_bacteria; j++) 
-		{
-			printf("%2d %2d -> %.20lf\n", i, j, results[i][j]);
-		}
-	}
 }
 
 void main(int argc,char * argv[])
@@ -286,4 +262,6 @@ void main(int argc,char * argv[])
 
 	time_t t2 = time(NULL);
 	printf("time elapsed: %d seconds\n", t2 - t1); 
+
+	system("pause");
 }
