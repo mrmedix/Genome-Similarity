@@ -1,0 +1,7 @@
+source /opt/intel/compilers_and_libraries/linux/bin/compilervars/sh intel64
+
+icpc improved.cpp -o gs.exe -openmp -O3
+
+
+Try cyclic distribution in openmp
+Test lower number of threads or processors to use to give a scaling speedup graph and determine if speedup is linear possible to set with environment variable

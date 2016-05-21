@@ -29,10 +29,16 @@
        <result_directory.path>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\My Amplifier XE Results - Genome Similarity\r@@@{at}</result_directory.path>
        <search_directories>
         <item>
-         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\Release</value>
+         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release_PG</value>
         </item>
         <item>
-         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\Release</value>
+         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release</value>
+        </item>
+        <item>
+         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release_PG</value>
+        </item>
+        <item>
+         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release</value>
         </item>
        </search_directories>
        <context>
@@ -111,23 +117,25 @@
       <workload>
        <targetName>launch</targetName>
        <launch_app.inherit_sys_environment type="bool">true</launch_app.inherit_sys_environment>
-       <launch_app.app_to_launch>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\Release\gs.exe</launch_app.app_to_launch>
+       <launch_app.app_to_launch>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release_PG\gs.exe</launch_app.app_to_launch>
        <launch_app.working_folder>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity</launch_app.working_folder>
        <launch_app.app_parameters>list.txt</launch_app.app_parameters>
-       <launch_app.environment>PATH=C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\redist\ia32\compiler;%PATH%&#13;
-PATH=C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\redist\ia32\compiler;%PATH%&#13;
-&#13;
-    &#13;
-    </launch_app.environment>
-       <launch_app.environment_prepend>PATH=C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\redist\ia32\compiler;</launch_app.environment_prepend>
+       <launch_app.environment></launch_app.environment>
+       <launch_app.environment_prepend>PATH=C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\redist\intel64\compiler;</launch_app.environment_prepend>
        <use_app_dir_as_work_dir type="bool">false</use_app_dir_as_work_dir>
        <result_directory.path>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\My Amplifier XE Results - Genome Similarity\r@@@{at}</result_directory.path>
        <search_directories>
         <item>
-         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\Release</value>
+         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release_PG</value>
         </item>
         <item>
-         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\Release</value>
+         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release</value>
+        </item>
+        <item>
+         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release_PG</value>
+        </item>
+        <item>
+         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release</value>
         </item>
        </search_directories>
        <context>
@@ -213,10 +221,16 @@ PATH=C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2016\windows\re
        <result_directory.path>C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\My Amplifier XE Results - Genome Similarity\r@@@{at}</result_directory.path>
        <search_directories>
         <item>
-         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\Release</value>
+         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release_PG</value>
         </item>
         <item>
-         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\Release</value>
+         <value>sym=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release</value>
+        </item>
+        <item>
+         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release_PG</value>
+        </item>
+        <item>
+         <value>bin=C:\Users\Bjorn\OneDrive\School\CAB401 - High Performance and Parallel Computing\Genome Similarity\x64\Release</value>
         </item>
        </search_directories>
        <context>

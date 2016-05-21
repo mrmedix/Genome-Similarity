@@ -235,7 +235,7 @@ double CompareBacteria(Bacteria* b1, Bacteria* b2)
 void CompareAllBacteria()
 {
 	Bacteria** b = new Bacteria*[number_bacteria];
-#pragma omp parallel for num_threads(8)
+#pragma omp parallel for
 	for(int i=0; i<number_bacteria; i++)
 	{
 		printf("load %d of %d\n", i+1, number_bacteria);
@@ -256,7 +256,7 @@ void CompareAllBacteria()
 	}
 
 	
-#pragma omp parallel for num_threads(8)
+#pragma omp parallel for schedule(dynamic)
 	for (int i = 0; i < number_bacteria - 1; i++)
 	{
 		for (int j = i + 1; j < number_bacteria; j++) // work for each thread reduces as distance to number_bacteria decreases.
@@ -276,7 +276,7 @@ void CompareAllBacteria()
 	}
 }
 
-void main(int argc,char * argv[])
+int main(int argc,char * argv[])
 {
 	time_t t1 = time(NULL);
 
@@ -286,4 +286,6 @@ void main(int argc,char * argv[])
 
 	time_t t2 = time(NULL);
 	printf("time elapsed: %d seconds\n", t2 - t1); 
+
+	return 0;
 }

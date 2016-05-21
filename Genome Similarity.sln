@@ -12,6 +12,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sequential", "Sequential\Sequential.vcxproj", "{3898849F-54B7-4067-A152-883AFB36BFB4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "results", "results", "{DCFCA6CF-ED8E-42DB-8E10-6A97FBE1131A}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\genome\parallel-result.txt = ..\..\..\..\..\..\genome\parallel-result.txt
+		..\..\..\..\..\..\genome\seq-result.txt = ..\..\..\..\..\..\genome\seq-result.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
@@ -26,6 +32,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
+		Release-unix|Any CPU = Release-unix|Any CPU
+		Release-unix|x64 = Release-unix|x64
+		Release-unix|x86 = Release-unix|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Debug|Any CPU.ActiveCfg = Debug|Win32
@@ -43,6 +52,11 @@ Global
 		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Release|x64.Build.0 = Release|x64
 		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Release|x86.ActiveCfg = Release|Win32
 		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Release|x86.Build.0 = Release|Win32
+		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Release-unix|Any CPU.ActiveCfg = Release-unix|Win32
+		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Release-unix|x64.ActiveCfg = Release-unix|x64
+		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Release-unix|x64.Build.0 = Release-unix|x64
+		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Release-unix|x86.ActiveCfg = Release-unix|Win32
+		{E23841D1-E48D-42BF-BF5B-523BFB2B7D53}.Release-unix|x86.Build.0 = Release-unix|Win32
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Debug|x64.ActiveCfg = Debug|x64
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Debug|x64.Build.0 = Debug|x64
@@ -59,6 +73,11 @@ Global
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release|x64.Build.0 = Release|x64
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release|x86.ActiveCfg = Release|Win32
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release|x86.Build.0 = Release|Win32
+		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release-unix|Any CPU.ActiveCfg = Release-unix|Win32
+		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release-unix|x64.ActiveCfg = Release-unix|x64
+		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release-unix|x64.Build.0 = Release-unix|x64
+		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release-unix|x86.ActiveCfg = Release-unix|Win32
+		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release-unix|x86.Build.0 = Release-unix|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

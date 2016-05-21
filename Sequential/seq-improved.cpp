@@ -3,7 +3,6 @@
 #include <string.h>
 #include <time.h>
 #include <math.h>
-#include <cstdlib>
 
 int number_bacteria;
 char** bacteria_name;
@@ -246,9 +245,9 @@ void CompareAllBacteria()
     for(int i=0; i<number_bacteria-1; i++)
 		for(int j=i+1; j<number_bacteria; j++)
 		{
-			printf("%2d %2d -> ", i, j);
 			double correlation = CompareBacteria(b[i], b[j]);
-			printf("%.20lf\n", correlation);
+			printf("%2d %2d -> %.20lf\n", i, j, correlation);
+			//printf("%.20lf\n", correlation);
 		}
 }
 
@@ -262,6 +261,4 @@ void main(int argc,char * argv[])
 
 	time_t t2 = time(NULL);
 	printf("time elapsed: %d seconds\n", t2 - t1); 
-
-	system("pause");
 }
