@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "results", "results", "{DCFC
 		..\..\..\..\..\..\genome\seq-result.txt = ..\..\..\..\..\..\genome\seq-result.txt
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Posix", "Posix\Posix.vcxproj", "{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}"
+EndProject
 Global
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
@@ -78,6 +80,28 @@ Global
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release-unix|x64.Build.0 = Release-unix|x64
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release-unix|x86.ActiveCfg = Release-unix|Win32
 		{3898849F-54B7-4067-A152-883AFB36BFB4}.Release-unix|x86.Build.0 = Release-unix|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Debug|x64.ActiveCfg = Debug|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Debug|x64.Build.0 = Debug|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Debug|x86.ActiveCfg = Debug|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Debug|x86.Build.0 = Debug|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release_PG|Any CPU.ActiveCfg = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release_PG|Any CPU.Build.0 = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release_PG|x64.ActiveCfg = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release_PG|x64.Build.0 = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release_PG|x86.ActiveCfg = Release|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release_PG|x86.Build.0 = Release|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release|Any CPU.ActiveCfg = Release|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release|x64.ActiveCfg = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release|x64.Build.0 = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release|x86.ActiveCfg = Release|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release|x86.Build.0 = Release|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release-unix|Any CPU.ActiveCfg = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release-unix|Any CPU.Build.0 = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release-unix|x64.ActiveCfg = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release-unix|x64.Build.0 = Release|x64
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release-unix|x86.ActiveCfg = Release|Win32
+		{8F947B6B-162B-4DCF-BF8C-E6C29CEDCEB9}.Release-unix|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

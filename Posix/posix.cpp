@@ -1,13 +1,21 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
 #include <math.h>
 
+// POSIX specific 
+#include <pthread.h>
+
+int NUM_THREADS;
 int number_bacteria;
+class Bacteria;
+Bacteria** b;
+
+
+
 char** bacteria_name;
 long M, M1, M2;
-short code[27] = { 0, 2, 1, 2, 3, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, 16, 1, 17, 18, 5, 19, 3};
+short code[27] = { 0, 2, 1, 2, 3, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 15, 16, 1, 17, 18, 5, 19, 3 };
 #define encode(ch)		code[ch-'A']
 #define LEN				6
 #define AA_NUMBER		20
@@ -16,10 +24,10 @@ short code[27] = { 0, 2, 1, 2, 3, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 
 void Init()
 {
 	M2 = 1;
-	for (int i=0; i<LEN-2; i++)	// M2 = AA_NUMBER ^ (LEN-2);
-		M2 *= AA_NUMBER; 
+	for (int i = 0; i<LEN - 2; i++)	// M2 = AA_NUMBER ^ (LEN-2);
+		M2 *= AA_NUMBER;
 	M1 = M2 * AA_NUMBER;		// M1 = AA_NUMBER ^ (LEN-1);
-	M  = M1 *AA_NUMBER;			// M  = AA_NUMBER ^ (LEN);
+	M = M1 *AA_NUMBER;			// M  = AA_NUMBER ^ (LEN);
 }
 
 class Bacteria
@@ -35,8 +43,8 @@ private:
 
 	void InitVectors()
 	{
-		vector = new long [M];
-		second = new long [M1];
+		vector = new long[M];
+		second = new long[M1];
 		memset(vector, 0, M * sizeof(long));
 		memset(second, 0, M1 * sizeof(long));
 		memset(one_l, 0, AA_NUMBER * sizeof(long));
@@ -49,7 +57,7 @@ private:
 	{
 		complement++;
 		indexs = 0;
-		for (int i=0; i<LEN-1; i++)
+		for (int i = 0; i<LEN - 1; i++)
 		{
 			short enc = encode(buffer[i]);
 			one_l[enc]++;
@@ -78,7 +86,7 @@ public:
 
 	Bacteria(char* filename)
 	{
-		FILE * bacteria_file = fopen(filename,"r");
+		FILE * bacteria_file = fopen(filename, "r");
 		InitVectors();
 
 		char ch;
@@ -88,11 +96,11 @@ public:
 			{
 				while (fgetc(bacteria_file) != '\n'); // skip rest of line
 
-				char buffer[LEN-1];
-				fread(buffer, sizeof(char), LEN-1, bacteria_file);
+				char buffer[LEN - 1];
+				fread(buffer, sizeof(char), LEN - 1, bacteria_file);
 				init_buffer(buffer);
 			}
-			else if (ch != '\n' && ch != '\r')
+			else if (ch != '\n' && ch != '\r') // Bjorn's edit, some files have \r\n line ending which crashes the program.
 				cont_buffer(ch);
 		}
 
@@ -104,25 +112,25 @@ public:
 		long i_div_M1 = 0;
 
 		double one_l_div_total[AA_NUMBER];
-		for (int i=0; i<AA_NUMBER; i++)
+		for (int i = 0; i<AA_NUMBER; i++)
 			one_l_div_total[i] = (double)one_l[i] / total_l;
-		
+
 		double* second_div_total = new double[M1];
-		for (int i=0; i<M1; i++)
+		for (int i = 0; i<M1; i++)
 			second_div_total[i] = (double)second[i] / total_plus_complement;
 
 		count = 0;
 		double* t = new double[M];
 
-		for(long i=0; i<M; i++)
+		for (long i = 0; i<M; i++)
 		{
 			double p1 = second_div_total[i_div_aa_number];
 			double p2 = one_l_div_total[i_mod_aa_number];
 			double p3 = second_div_total[i_mod_M1];
 			double p4 = one_l_div_total[i_div_M1];
-			double stochastic =  (p1 * p2 + p3 * p4) * total_div_2;
+			double stochastic = (p1 * p2 + p3 * p4) * total_div_2;
 
-			if (i_mod_aa_number == AA_NUMBER-1)
+			if (i_mod_aa_number == AA_NUMBER - 1)
 			{
 				i_mod_aa_number = 0;
 				i_div_aa_number++;
@@ -130,7 +138,7 @@ public:
 			else
 				i_mod_aa_number++;
 
-			if (i_mod_M1 == M1-1)
+			if (i_mod_M1 == M1 - 1)
 			{
 				i_mod_M1 = 0;
 				i_div_M1++;
@@ -138,7 +146,7 @@ public:
 			else
 				i_mod_M1++;
 
-			if (stochastic > EPSILON) 
+			if (stochastic > EPSILON)
 			{
 				t[i] = (vector[i] - stochastic) / stochastic;
 				count++;
@@ -146,7 +154,7 @@ public:
 			else
 				t[i] = 0;
 		}
-		
+
 		delete second_div_total;
 		delete vector;
 		delete second;
@@ -155,7 +163,7 @@ public:
 		ti = new long[count];
 
 		int pos = 0;
-		for (long i=0; i<M; i++)
+		for (long i = 0; i<M; i++)
 		{
 			if (t[i] != 0)
 			{
@@ -166,21 +174,21 @@ public:
 		}
 		delete t;
 
-		fclose (bacteria_file);
+		fclose(bacteria_file);
 	}
 };
 
 void ReadInputFile(char* input_name)
 {
-	FILE* input_file = fopen(input_name,"r");
-    fscanf(input_file,"%d",&number_bacteria);
+	FILE* input_file = fopen(input_name, "r");
+	fscanf(input_file, "%d", &number_bacteria);
 	bacteria_name = new char*[number_bacteria];
 
-	for(long i=0;i<number_bacteria;i++)
+	for (long i = 0; i<number_bacteria; i++)
 	{
 		bacteria_name[i] = new char[20];
 		fscanf(input_file, "%s", bacteria_name[i]);
-		strcat(bacteria_name[i],".faa");
+		strcat(bacteria_name[i], ".faa");
 	}
 	fclose(input_file);
 }
@@ -188,8 +196,8 @@ void ReadInputFile(char* input_name)
 double CompareBacteria(Bacteria* b1, Bacteria* b2)
 {
 	double correlation = 0;
-	double vector_len1=0;
-	double vector_len2=0;
+	double vector_len1 = 0;
+	double vector_len2 = 0;
 	long p1 = 0;
 	long p2 = 0;
 	while (p1 < b1->count && p2 < b2->count)
@@ -233,37 +241,102 @@ double CompareBacteria(Bacteria* b1, Bacteria* b2)
 	return correlation / (sqrt(vector_len1) * sqrt(vector_len2));
 }
 
-void CompareAllBacteria()
+void *LoadBacteriaWorker(void *threadID)
 {
-	Bacteria** b = new Bacteria*[number_bacteria];
-    for(int i=0; i<number_bacteria; i++)
+	long id = (long)threadID;
+	int blockSize = (number_bacteria + NUM_THREADS - 1) / NUM_THREADS;
+
+	int lowerBound = id * blockSize;
+	int upperBound = ((lowerBound + blockSize) < (number_bacteria)) ? (lowerBound + blockSize) : (number_bacteria);
+
+	for (int i = lowerBound; i < upperBound; i++)
 	{
-		//printf("load %d of %d\n", i+1, number_bacteria); Not needed for speed measurement
 		b[i] = new Bacteria(bacteria_name[i]);
 	}
 
-	int count = 0;
-    for(int i=0; i<number_bacteria-1; i++)
-		for(int j=i+1; j<number_bacteria; j++)
-		{
-			double correlation = CompareBacteria(b[i], b[j]);
-			printf("%2d %2d -> %.20lf\n", i, j, correlation);
-			//printf("%.20lf\n", correlation);
-			count++;
-		}
-	printf("%i\n", count);
 }
 
-int main(int argc,char * argv[])
+void CompareAllBacteria()
 {
-	time_t t1 = time(NULL);
 
-	Init();
-	ReadInputFile(argv[1]);
-	CompareAllBacteria();
+	b = new Bacteria*[number_bacteria];
 
-	time_t t2 = time(NULL);
-	printf("time elapsed: %d seconds\n", t2 - t1); 
 
+	// Set up posix threads
+	pthread_t threads[number_bacteria];
+	pthread_attr_t attr;
+	void *status;
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+
+	for (int i = 0; i < NUM_THREADS; i++)
+	{
+		pthread_create(&threads[i], &attr, LoadBacteriaWorker, (void *)i);
+	}
+
+	for (int i = 0; i < NUM_THREADS; i++)
+	{
+		pthread_join(threads[i], &status);
+	}
+	/*
+	for (int i = 0; i<number_bacteria; i++)
+	{
+		b[i] = new Bacteria(bacteria_name[i]);
+	}
+	*/
+	/*
+	Results are printed to the screen in random order due to thread scheduler.
+	Need to store results in a temporary data structure to present consistently ordered results
+	to the user.
+	*/
+
+	double **results;
+	results = new double*[number_bacteria - 1]; // i loop does num - 1 iterations
+	for (int i = 0; i < number_bacteria - 1; i++)
+	{
+		results[i] = new double[number_bacteria - 1];
+	}
+
+#pragma omp parallel for schedule(dynamic,1) num_threads(10)
+	for (int i = 0; i < number_bacteria - 1; i++)
+	{
+		for (int j = i + 1; j < number_bacteria; j++) // work for each thread reduces as distance to number_bacteria decreases.
+		{
+			results[i][j] = CompareBacteria(b[i], b[j]);
+		}
+	}
+
+	FILE *dump = fopen("results.bin", "wb");
+	fwrite(results, sizeof(double), (number_bacteria - 1)*(number_bacteria - 1), dump);
+	fclose(dump);
+
+	/* Not needed in speediest version
+	// Replicate comparison loop, printing out to screen
+	for (int i = 0; i < number_bacteria - 1; i++)
+	{
+	for (int j = i + 1; j < number_bacteria; j++)
+	{
+	printf("%2d %2d -> %.20lf\n", i, j, results[i][j]);
+	}
+	}
+	*/
+}
+
+int main(int argc, char * argv[])
+{
+	// Run the program multiple times to smooth out spikes and drops in performance
+	for (int i = 0; i < 10; i++)
+	{
+		time_t t1 = time(NULL);
+
+		NUM_THREADS = 32;//(int)argv[2];
+
+		Init();
+		ReadInputFile(argv[1]);
+		CompareAllBacteria();
+
+		time_t t2 = time(NULL);
+		printf("time elapsed: %d seconds\n", t2 - t1);
+	}
 	return 0;
 }

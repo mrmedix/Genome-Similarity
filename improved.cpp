@@ -235,10 +235,10 @@ double CompareBacteria(Bacteria* b1, Bacteria* b2)
 void CompareAllBacteria()
 {
 	Bacteria** b = new Bacteria*[number_bacteria];
-#pragma omp parallel for
+#pragma omp parallel for schedule(dynamic, 1)
 	for(int i=0; i<number_bacteria; i++)
 	{
-		printf("load %d of %d\n", i+1, number_bacteria);
+		//printf("load %d of %d\n", i+1, number_bacteria); Not needed for speed version
 		b[i] = new Bacteria(bacteria_name[i]);
 	}
 
@@ -256,7 +256,7 @@ void CompareAllBacteria()
 	}
 
 	
-#pragma omp parallel for schedule(dynamic)
+#pragma omp parallel for schedule(dynamic,1)
 	for (int i = 0; i < number_bacteria - 1; i++)
 	{
 		for (int j = i + 1; j < number_bacteria; j++) // work for each thread reduces as distance to number_bacteria decreases.
@@ -265,7 +265,12 @@ void CompareAllBacteria()
 			//printf("%2d %2d -> %.20lf\n", i, j, correlation);
 		}
 	}
+
+	FILE *dump = fopen("results.bin", "wb");
+	fwrite(results, sizeof(double), (number_bacteria - 1)*(number_bacteria - 1), dump);
+	fclose(dump);
 	
+	/* Not needed in speediest version
 	// Replicate comparison loop, printing out to screen
 	for (int i = 0; i < number_bacteria - 1; i++)
 	{
@@ -274,18 +279,22 @@ void CompareAllBacteria()
 			printf("%2d %2d -> %.20lf\n", i, j, results[i][j]);
 		}
 	}
+	*/
 }
 
 int main(int argc,char * argv[])
 {
-	time_t t1 = time(NULL);
+	// Run the program multiple times to smooth out spikes and drops in performance
+	for (int i = 0; i < 10; i++)
+	{
+		time_t t1 = time(NULL);
 
-	Init();
-	ReadInputFile(argv[1]);
-	CompareAllBacteria();
+		Init();
+		ReadInputFile(argv[1]);
+		CompareAllBacteria();
 
-	time_t t2 = time(NULL);
-	printf("time elapsed: %d seconds\n", t2 - t1); 
-
+		time_t t2 = time(NULL);
+		printf("time elapsed: %d seconds\n", t2 - t1);
+	}
 	return 0;
 }
