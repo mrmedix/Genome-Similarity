@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
 #include <math.h>
 
 int number_bacteria;
@@ -256,13 +255,12 @@ void CompareAllBacteria()
 	}
 
 	
-#pragma omp parallel for schedule(dynamic,1)
+#pragma omp parallel for schedule(dynamic, 1) num_threads(10)
 	for (int i = 0; i < number_bacteria - 1; i++)
 	{
 		for (int j = i + 1; j < number_bacteria; j++) // work for each thread reduces as distance to number_bacteria decreases.
 		{
 			results[i][j] = CompareBacteria(b[i], b[j]);
-			//printf("%2d %2d -> %.20lf\n", i, j, correlation);
 		}
 	}
 
@@ -284,17 +282,9 @@ void CompareAllBacteria()
 
 int main(int argc,char * argv[])
 {
-	// Run the program multiple times to smooth out spikes and drops in performance
-	for (int i = 0; i < 10; i++)
-	{
-		time_t t1 = time(NULL);
+	Init();
+	ReadInputFile(argv[1]);
+	CompareAllBacteria();
 
-		Init();
-		ReadInputFile(argv[1]);
-		CompareAllBacteria();
-
-		time_t t2 = time(NULL);
-		printf("time elapsed: %d seconds\n", t2 - t1);
-	}
 	return 0;
 }

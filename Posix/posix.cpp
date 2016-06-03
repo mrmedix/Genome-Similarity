@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
 #include <math.h>
 
 // POSIX specific 
@@ -24,7 +23,7 @@ short code[27] = { 0, 2, 1, 2, 3, 4, 5, 6, 7, -1, 8, 9, 10, 11, -1, 12, 13, 14, 
 void Init()
 {
 	M2 = 1;
-	for (int i = 0; i<LEN - 2; i++)	// M2 = AA_NUMBER ^ (LEN-2);
+	for (int i = 0; i < LEN - 2; i++)	// M2 = AA_NUMBER ^ (LEN-2);
 		M2 *= AA_NUMBER;
 	M1 = M2 * AA_NUMBER;		// M1 = AA_NUMBER ^ (LEN-1);
 	M = M1 *AA_NUMBER;			// M  = AA_NUMBER ^ (LEN);
@@ -57,7 +56,7 @@ private:
 	{
 		complement++;
 		indexs = 0;
-		for (int i = 0; i<LEN - 1; i++)
+		for (int i = 0; i < LEN - 1; i++)
 		{
 			short enc = encode(buffer[i]);
 			one_l[enc]++;
@@ -112,17 +111,17 @@ public:
 		long i_div_M1 = 0;
 
 		double one_l_div_total[AA_NUMBER];
-		for (int i = 0; i<AA_NUMBER; i++)
+		for (int i = 0; i < AA_NUMBER; i++)
 			one_l_div_total[i] = (double)one_l[i] / total_l;
 
 		double* second_div_total = new double[M1];
-		for (int i = 0; i<M1; i++)
+		for (int i = 0; i < M1; i++)
 			second_div_total[i] = (double)second[i] / total_plus_complement;
 
 		count = 0;
 		double* t = new double[M];
 
-		for (long i = 0; i<M; i++)
+		for (long i = 0; i < M; i++)
 		{
 			double p1 = second_div_total[i_div_aa_number];
 			double p2 = one_l_div_total[i_mod_aa_number];
@@ -163,7 +162,7 @@ public:
 		ti = new long[count];
 
 		int pos = 0;
-		for (long i = 0; i<M; i++)
+		for (long i = 0; i < M; i++)
 		{
 			if (t[i] != 0)
 			{
@@ -184,7 +183,7 @@ void ReadInputFile(char* input_name)
 	fscanf(input_file, "%d", &number_bacteria);
 	bacteria_name = new char*[number_bacteria];
 
-	for (long i = 0; i<number_bacteria; i++)
+	for (long i = 0; i < number_bacteria; i++)
 	{
 		bacteria_name[i] = new char[20];
 		fscanf(input_file, "%s", bacteria_name[i]);
@@ -254,6 +253,8 @@ void *LoadBacteriaWorker(void *threadID)
 		b[i] = new Bacteria(bacteria_name[i]);
 	}
 
+	pthread_exit((void*)threadID);
+
 }
 
 void CompareAllBacteria()
@@ -297,7 +298,7 @@ void CompareAllBacteria()
 		results[i] = new double[number_bacteria - 1];
 	}
 
-#pragma omp parallel for schedule(dynamic,1) num_threads(10)
+#pragma omp parallel for schedule(dynamic,1)
 	for (int i = 0; i < number_bacteria - 1; i++)
 	{
 		for (int j = i + 1; j < number_bacteria; j++) // work for each thread reduces as distance to number_bacteria decreases.
@@ -310,33 +311,15 @@ void CompareAllBacteria()
 	fwrite(results, sizeof(double), (number_bacteria - 1)*(number_bacteria - 1), dump);
 	fclose(dump);
 
-	/* Not needed in speediest version
-	// Replicate comparison loop, printing out to screen
-	for (int i = 0; i < number_bacteria - 1; i++)
-	{
-	for (int j = i + 1; j < number_bacteria; j++)
-	{
-	printf("%2d %2d -> %.20lf\n", i, j, results[i][j]);
-	}
-	}
-	*/
 }
 
 int main(int argc, char * argv[])
 {
-	// Run the program multiple times to smooth out spikes and drops in performance
-	for (int i = 0; i < 10; i++)
-	{
-		time_t t1 = time(NULL);
+	sscanf(argv[2], "%d", &NUM_THREADS);
 
-		NUM_THREADS = 32;//(int)argv[2];
+	Init();
+	ReadInputFile(argv[1]);
+	CompareAllBacteria();
 
-		Init();
-		ReadInputFile(argv[1]);
-		CompareAllBacteria();
-
-		time_t t2 = time(NULL);
-		printf("time elapsed: %d seconds\n", t2 - t1);
-	}
 	return 0;
 }
